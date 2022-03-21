@@ -68,3 +68,23 @@ oc get csv -n cp4i-poc
 
 
 
+docker login cp.icr.io -u cp -p <entitlement_key>
+
+--- print as below ---- 
+onfigure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+-----
+
+```
+oc create secret docker-registry ibm-entitlement-key \
+    --docker-username=cp \
+    --docker-password=<entitlement_key> \
+    --docker-server=cp.icr.io \
+    --namespace=cp4i-poc
+```
+
+
+secret/ibm-entitlement-key created
+
