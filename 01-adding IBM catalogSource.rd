@@ -42,4 +42,29 @@ spec:
 oc apply -f operator-group.yaml -n cp4i-poc
 
 
+vi subscription.yaml
+```
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-cp-integration
+  namespace: cp4i-poc
+spec:
+  channel: v1.5
+  name: ibm-cp-integration
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
+```
+
+oc apply -f subscription.yaml -n cp4i-poc
+
+
+############
+Validating installation of an operator
+########################
+
+oc get csv -n cp4i-poc
+
+
+
 
