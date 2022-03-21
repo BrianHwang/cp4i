@@ -56,6 +56,34 @@ spec:
 oc apply -f operator-group.yaml -n cp4i-poc
 ```
 
+# IBM entitlement key
+https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.4?topic=installing-applying-your-entitlement-key-online-installation
+
+```
+docker login cp.icr.io -u cp -p <entitlement_key>
+```
+```
+# it will print as below
+
+onfigure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+```
+
+```
+oc create secret docker-registry ibm-entitlement-key \
+    --docker-username=cp \
+    --docker-password=<entitlement_key> \
+    --docker-server=cp.icr.io \
+    --namespace=cp4i-poc
+```
+
+```
+# it will print as below
+secret/ibm-entitlement-key created
+```
+
 # ibm-cp-integration operator
 ```
 vi subscription.yaml
@@ -88,33 +116,7 @@ oc get csv -n cp4i-poc
 ```
 
 
-# IBM entitlement key
-https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.4?topic=installing-applying-your-entitlement-key-online-installation
 
-```
-docker login cp.icr.io -u cp -p <entitlement_key>
-```
-```
-# it will print as below
-
-onfigure a credential helper to remove this warning. See
-https://docs.docker.com/engine/reference/commandline/login/#credentials-store
-
-Login Succeeded
-```
-
-```
-oc create secret docker-registry ibm-entitlement-key \
-    --docker-username=cp \
-    --docker-password=<entitlement_key> \
-    --docker-server=cp.icr.io \
-    --namespace=cp4i-poc
-```
-
-```
-# it will print as below
-secret/ibm-entitlement-key created
-```
 
 # deploy IBM cloud pak for integration
 https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.4?topic=installing-deploying-cloud-pak-integration-using-cli
