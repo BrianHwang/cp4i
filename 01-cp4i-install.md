@@ -149,4 +149,7 @@ spec:
 oc apply -f platformnavigator.yaml
 ```
 
+'''
+oc describe PlatformNavigator integration-quickstart --namespace=cp4i-poc
+```
 
