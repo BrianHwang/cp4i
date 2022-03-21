@@ -48,7 +48,10 @@ oc apply -f operator-group.yaml -n cp4i-poc
 ```
 
 # ibm-cp-integration operator
+```
 vi subscription.yaml
+```
+
 ```
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
