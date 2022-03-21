@@ -1,3 +1,12 @@
+# create project
+```
+oc new-project cp4i-poc
+oc projects
+oc get projects
+oc project cp4i-poc
+
+```
+
 # adding IBM catalogSource
 https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.4?topic=installing-adding-catalog-sources-online-openshift-cluster
 
