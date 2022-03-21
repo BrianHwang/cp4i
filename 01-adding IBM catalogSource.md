@@ -68,6 +68,8 @@ oc apply -f subscription.yaml -n cp4i-poc
 
 
 # Validating installation of an operator
+- https://access.redhat.com/documentation/en-us/openshift_container_platform/4.2/html-single/operators/index
+- csv : cluster service versoin 
 
 ```
 oc get csv -n cp4i-poc
