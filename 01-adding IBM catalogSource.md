@@ -110,6 +110,8 @@ secret/ibm-entitlement-key created
 # deploy IBM cloud pak for integration
 https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.4?topic=installing-deploying-cloud-pak-integration-using-cli
 
+TODO : play around from UI, get yaml format, set below 
+
 ```
 vi platformnavigator.yaml
 ```
