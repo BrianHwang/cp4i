@@ -199,7 +199,7 @@ oc apply -f platformnavigator.yaml
 ```
 
 ```
-oc describe PlatformNavigator integration-quickstart --namespace=cp4i-poc
+oc describe PlatformNavigator integration-navigator --namespace=cp4i-poc
 ```
 # install ACE
 TODO : node selection
