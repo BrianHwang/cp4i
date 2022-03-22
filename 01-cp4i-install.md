@@ -178,7 +178,7 @@ vi platformnavigator.yaml
 apiVersion: integration.ibm.com/v1beta1
 kind: PlatformNavigator
 metadata:
-    name: integration-quickstart
+    name: integration-navigator
     namespace: cp4i-poc
 spec:
     license:
@@ -189,7 +189,7 @@ spec:
     mqDashboard: true
     replicas: 1
     storage:
-        class: "storage_class"
+        class: gp2-csi
     version: 2021.4.1
 ``` 
 
