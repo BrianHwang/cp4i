@@ -85,6 +85,7 @@ secret/ibm-entitlement-key created
 ```
 
 # ibm-cp-integration operator
+
 ```
 vi subscription.yaml
 ```
@@ -101,6 +102,11 @@ spec:
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
 ```
+failed once. create catalogSource from UI same as with namespace=openshift-marketplace 
+https://www.ibm.com/docs/en/cloud-paks/cp-integration/2021.4?topic=installing-adding-catalog-sources-online-openshift-cluster
+then re-run it goes well
+
+NOTE : after this , how it check the status ?
 
 ```
 oc apply -f subscription.yaml -n cp4i-poc
