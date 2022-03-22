@@ -121,6 +121,28 @@ oc apply -f subscription.yaml -n cp4i-poc
 oc get csv -n cp4i-poc
 ```
 
+NOTE : why ibm nodes pods running
+```
+[cloudshell-user@ip-10-0-186-50 ~]$ oc get pods -o wide
+NAME                                                             READY   STATUS             RESTARTS       AGE     IP            NODE                                             NOMINATED NODE   READINESS GATES
+couchdb-operator-765c5968f6-f8c4g                                1/1     Running            0              3m55s   10.131.0.28   ip-10-41-84-29.ap-southeast-2.compute.internal   <none>           <none>
+datapower-operator-54f8b74685-7h275                              1/1     Running            0              4m11s   10.128.2.36   ip-10-41-84-57.ap-southeast-2.compute.internal   <none>           <none>
+datapower-operator-conversion-webhook-5479f58fd4-kcddz           1/1     Running            0              3m41s   10.131.0.30   ip-10-41-84-29.ap-southeast-2.compute.internal   <none>           <none>
+eventstreams-cluster-operator-5cd4dcb699-2jlgx                   1/1     Running            0              3m43s   10.129.2.47   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+iaf-core-operator-controller-manager-77d9bb7bd-2vfst             0/1     Running            0              4m8s    10.131.0.26   ip-10-41-84-29.ap-southeast-2.compute.internal   <none>           <none>
+ibm-ai-wmltraining-operator-6b487575f-gks7n                      1/1     Running            0              3m49s   10.131.0.29   ip-10-41-84-29.ap-southeast-2.compute.internal   <none>           <none>
+ibm-apiconnect-7c57bdc98c-klpq8                                  0/1     CrashLoopBackOff   2 (26s ago)    3m39s   10.129.2.48   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+ibm-appconnect-operator-85ddfc759c-gv8vd                         1/1     Running            1 (72s ago)    3m57s   10.129.2.44   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+ibm-aspera-hsts-operator-6985495d64-x4c2f                        1/1     Running            0              3m59s   10.131.0.27   ip-10-41-84-29.ap-southeast-2.compute.internal   <none>           <none>
+ibm-cloud-databases-redis-operator-5ccf8cc948-bg477              1/1     Running            0              4m18s   10.128.2.34   ip-10-41-84-57.ap-southeast-2.compute.internal   <none>           <none>
+ibm-common-service-operator-6cdb8ff7d-ldxj7                      1/1     Running            0              4m15s   10.128.2.35   ip-10-41-84-57.ap-southeast-2.compute.internal   <none>           <none>
+ibm-cp-integration-74cb979f6f-r5z8p                              1/1     Running            0              3m47s   10.129.2.46   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+ibm-integration-asset-repository-operator-86749f95cc-tthnc       1/1     Running            3 (2m9s ago)   3m59s   10.129.2.43   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+ibm-integration-operations-dashboard-operator-5669bcdc67-6mf8v   1/1     Running            2 (108s ago)   3m54s   10.129.2.45   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+ibm-integration-platform-navigator-operator-8f76bdf8c-bn4vs      1/1     Running            0              4m6s    10.129.2.42   ip-10-41-84-43.ap-southeast-2.compute.internal   <none>           <none>
+ibm-mq-86dcc854bb-8nwrp                                          1/1     Running            4 (114s ago)   4m10s   10.128.2.37   ip-10-41-84-57.ap-southeast-2.compute.internal   <none>           <none>
+ibm-operator-catalog-jmxds                                       1/1     Running            0              14m     10.128.2.11   ip-10-41-84-57.ap-southeast-2.compute.internal   <none>           <none>
+```
 
 
 
