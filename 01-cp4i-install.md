@@ -1,3 +1,24 @@
+# OpenShift Container Storage
+```
+rosa create machinepool --cluster rosa-cp4ba-poc --name storage-nodes --instance-type m5.xlarge --replicas 3 \
+--taints 'node.ocs.openshift.io/storage=true:NoSchedule' \
+--labels 'node-role.kubernetes.io/storage=,cluster.ocs.openshift.io/openshift-storage='
+
+I: Machine pool 'storage-nodes' created successfully on cluster 'rosa-cp4ba-poc'
+I: To view all machine pools, run 'rosa list machinepools -c rosa-cp4ba-poc'
+[cloudshell-user@ip-10-0-162-192 ~]$ rosa list machinepools -c rosa-cp4ba-poc
+ID             AUTOSCALING  REPLICAS  INSTANCE TYPE  LABELS                                                                           TAINTS                                           AVAILABILITY ZONES    SPOT INSTANCES
+Default        No           3         m5.xlarge                                                                                                                                        ap-southeast-2a       N/A
+storage-nodes  No           3         m5.4xlarge     cluster.ocs.openshift.io/openshift-storage=, node-role.kubernetes.io/storage=    node.ocs.openshift.io/storage=true:NoSchedule    ap-southeast-2a       No
+
+```
+```
+oc get machineset -n openshift-machine-api
+oc get machines -n openshift-machine-api
+# all node should be ready
+oc get node
+```
+
 # create project
 ```
 oc new-project cp4i-poc
