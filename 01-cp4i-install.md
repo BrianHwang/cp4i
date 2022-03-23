@@ -210,7 +210,7 @@ spec:
     mqDashboard: true
     replicas: 1
     storage:
-        class: gp2-csi
+        class: gp2
     version: 2021.4.1
 ``` 
 
